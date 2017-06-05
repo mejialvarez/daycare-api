@@ -12,4 +12,49 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "activities", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "activity_logs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "baby_id"
+    t.integer "assistant_id"
+    t.integer "activity_id"
+    t.datetime "start_time"
+    t.datetime "stop_time"
+    t.integer "duration"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_activity_logs_on_activity_id"
+    t.index ["assistant_id"], name: "index_activity_logs_on_assistant_id"
+    t.index ["baby_id"], name: "index_activity_logs_on_baby_id"
+  end
+
+  create_table "assistants", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "group"
+    t.string "address"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "babies", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.date "birthday"
+    t.string "mother_name"
+    t.string "father_name"
+    t.string "address"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "activity_logs", "activities"
+  add_foreign_key "activity_logs", "assistants"
+  add_foreign_key "activity_logs", "babies"
 end
