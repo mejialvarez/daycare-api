@@ -18,9 +18,9 @@ module Daycare
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
-        resource '/v1/*',
+        resource '/api/*',
           headers: ['Origin', 'Accept', 'Content-Type', 'Authorization', 'X-Requested-With'],
-          methods: [:get, :post, :put]
+          methods: [:get, :post, :put, :delete]
       end
     end
   end
