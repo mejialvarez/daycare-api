@@ -14,6 +14,6 @@ class ActivityLogSerializer < ActiveModel::Serializer
   end
 
   def stop_time
-    object.stop_time.to_time.iso8601
+    object.stop_time.to_time.iso8601 if object.stop_time
   end
 end

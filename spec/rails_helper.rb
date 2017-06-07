@@ -58,9 +58,9 @@ RSpec.configure do |config|
   # Include Factory Girl syntax to simplify calls to factories
   config.include FactoryGirl::Syntax::Methods
 
-  #Including to test requests
   config.include Request::JsonHelpers, type: :controller
   config.include SerializerHelper
+  config.include AttributesHelper, type: :controller
 
   # Clean DB
   config.before(:suite) do

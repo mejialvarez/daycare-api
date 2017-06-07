@@ -15,6 +15,8 @@ module Daycare
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.autoload_paths += Dir["#{Rails.root}/app/validators/"]
+
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
