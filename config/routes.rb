@@ -1,6 +1,10 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
+  root 'activity_logs#index'
+
+  resources :activity_logs, only: [:index]
+
   namespace :api, defaults: { format: 'json' } do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :activities, only: [:index]

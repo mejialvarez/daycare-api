@@ -1,0 +1,15 @@
+<%= form_tag activity_logs_path, method: :get, remote: true, class: 'form-inline' do %>
+  <div class="form-group">
+    <%= select_tag :baby, options_from_collection_for_select(babies, "id", "name", params[:baby]), prompt: 'Seleccionar un bebé', class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= select_tag :assistant, options_from_collection_for_select(assistants, "id", "name", params[:assistant]), prompt: 'Seleccionar un asistente', class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= select_tag :status, options_for_select(ActivityLog.statuses.map {|k, v| [k.humanize, v]}),prompt: 'Todos', class: "form-control" %>
+  </div>
+
+  <%= submit_tag "Filtrar", name: nil, class: "btn btn-primary btn-md" %>
+<% end %>

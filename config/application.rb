@@ -17,13 +17,7 @@ module Daycare
 
     config.autoload_paths += Dir["#{Rails.root}/app/validators/"]
 
-    config.middleware.use Rack::Cors do
-      allow do
-        origins '*'
-        resource '/api/*',
-          headers: ['Origin', 'Accept', 'Content-Type', 'Authorization', 'X-Requested-With'],
-          methods: [:get, :post, :put, :delete]
-      end
-    end
+    config.time_zone = 'America/Monterrey' 
+    config.active_record.default_timezone = :local 
   end
 end

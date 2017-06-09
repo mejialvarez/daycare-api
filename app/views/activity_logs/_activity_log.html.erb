@@ -1,0 +1,21 @@
+<tr class="activity-log">
+  <td>
+    <span class="attribute"><%= activity_log.baby %></span>
+    <span class="attribute-name"><%= activity_log.assistant %></span>
+  </td>
+  <td class="text-center">
+    <span class="attribute"><%= activity_log.activity %></span>
+    <span class="attribute-name">Actividad</span>
+  </td>
+  <td class="text-center">
+    <span class="attribute"><%= activity_log.start_time.strftime("%Y-%m-%d %H:%M") %></span>
+    <span class="attribute-name">Inicio</span>
+  </td>
+  <td class="text-center">
+    <span class="attribute">
+      <%= activity_log.stop_time.present? ? "Terminado" : "En proceso" %>
+      <%= "en #{activity_log.duration} min" if activity_log.duration.present? %>
+    </span>
+    <span class="attribute-name">Estado</span>
+  </td>       
+</tr>

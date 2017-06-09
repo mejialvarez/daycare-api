@@ -1,0 +1,11 @@
+<div class="activity-logs-page">
+  <h1 class="title">Log de actividades</h1>
+
+  <%= render partial: 'search_form', locals: { babies: @babies, assistants: @assistants } %>
+
+  <table class="table activity-logs">
+    <tbody>
+      <%= render @activity_logs %>
+    </tbody>
+  </table>
+</div>
