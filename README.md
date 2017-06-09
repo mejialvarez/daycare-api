@@ -1,24 +1,28 @@
-# README
+# Daycare API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+This is a Rails 5 project that uses Mysql as the database. Once you have that installed, download the project by cloning it from Git:
 
-* Ruby version
+```
+$ git clone git@github.com:mejialvarez/daycare-api.git
+```
 
-* System dependencies
+Then, install the dependencies with:
 
-* Configuration
+```
+$ bundle
+```
 
-* Database creation
+Create the database and run the migrations by executing:
 
-* Database initialization
+```
+$ rails db:create
+$ rails db:schema:load
+```
 
-* How to run the test suite
+You can seed the database running:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails db:seed
+```
