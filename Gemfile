@@ -66,6 +66,8 @@ group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
   # Making tests easy on the fingers and eyes
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+  gem "simplecov"
+  gem 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
 end
 
 
