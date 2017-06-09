@@ -16,6 +16,7 @@ module Daycare
     # -- all .rb files in that directory are automatically loaded.
 
     config.autoload_paths += Dir["#{Rails.root}/app/validators/"]
+    config.autoload_paths += Dir["#{Rails.root}/lib/"]
 
     config.time_zone = 'America/Monterrey' 
     config.active_record.default_timezone = :local 

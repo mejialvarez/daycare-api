@@ -1,4 +1,4 @@
-class Api::V1::BabiesController < ApplicationController
+class Api::V1::BabiesController < Api::V1::ApiController
 
   def index
     render json: Baby.all

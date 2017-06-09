@@ -6,6 +6,12 @@ describe Api::V1::ActivityLogsController do
   let :activity_log_params { attributes_with_foreign_keys(:activity_log) }
   let :activity_log_invalid_params { attributes_for(:activity_log_invalid) }
 
+  let(:user) { create(:user) }
+
+  before :each do
+    sign_in(user)
+  end
+
   describe 'GET #index' do
     it 'responds with status 200 OK' do
       get :index, params: { baby_id: baby }

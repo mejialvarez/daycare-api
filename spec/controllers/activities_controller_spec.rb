@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe Api::V1::ActivitiesController do
+  let(:user) { create(:user) }
+
+  before :each do
+    sign_in(user)
+  end
+
   describe 'GET #index' do
     before :each do
       4.times { create(:activity) }

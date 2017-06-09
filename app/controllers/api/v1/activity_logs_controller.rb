@@ -1,4 +1,4 @@
-class Api::V1::ActivityLogsController < ApplicationController
+class Api::V1::ActivityLogsController < Api::V1::ApiController
   def index
     render json: ActivityLog.includes(:baby, :assistant).for_baby(params[:baby_id])
   end
@@ -26,6 +26,6 @@ class Api::V1::ActivityLogsController < ApplicationController
   private
     def activity_log_params
       params.require(:activity_log).permit(:baby_id, :assistant_id,
-        :activity_id, :start_time, :stop_time)
+        :activity_id, :start_time)
     end
 end
