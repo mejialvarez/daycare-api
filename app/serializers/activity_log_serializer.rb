@@ -1,5 +1,5 @@
 class ActivityLogSerializer < ActiveModel::Serializer
-  attributes :id, :baby_id, :assistant_name, :start_time, :stop_time
+  attributes :id, :baby_id, :assistant_name, :start_time, :stop_time, :comments, :duration
 
   def baby_id
     object.baby.id

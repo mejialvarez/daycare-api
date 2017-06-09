@@ -9,7 +9,9 @@ describe ActivityLogSerializer, type: :serializer do
       baby_id: activity_log.baby.id,
       assistant_name: activity_log.assistant.name,
       start_time: activity_log.start_time.to_time.iso8601,
-      stop_time: activity_log.stop_time.to_time.iso8601
+      stop_time: activity_log.stop_time.to_time.iso8601,
+      comments: activity_log.comments,
+      duration: nil
     }
 
     expect(serialize(activity_log)).to eq activity_log_serialized
